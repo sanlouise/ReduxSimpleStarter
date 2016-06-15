@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 //Create new HTML creating component.
-const App = function() {
+const App = () => {
 	//JSX, subset of JS that looks like JS
 	return <div>Hi!</div>;
 }
