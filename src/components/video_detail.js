@@ -2,6 +2,7 @@ import React from 'react';
 
 const VideoDetail = ({video}) => {
 
+	//Important to include this, takes a moment to load the videos. Ensures that 'undefined' is not returned.
 	if(!video) {
 		return <div>Loading...</div>;
 	}
