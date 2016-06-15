@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import YTSearch from 'youtube-api-search';
 //Path reference to own files. Not needed for libraries.
 import SearchBar from './components/search_bar';
+import VideoList from './components/video_list'
 
 const API_KEY = 'AIzaSyCzPG9rlPb_UdgU0BHK6H5S-lqS3mdtQas';
 
@@ -14,8 +15,10 @@ class App extends Component {
 
 		this.state = { videos: [] };
 
-		YTSearch({key: API_KEY, term: 'puppies'}, function(data) {
-		console.log(data);
+		YTSearch({key: API_KEY, term: 'puppies'}, (videos) => {
+			//Instead of this.setState({ videos: videos }); -- the value could be called anything.. this is syntactical sugar.
+			//Works only when key and value pair have the same name.
+			this.setState({ videos });
 		});
 	}
 
@@ -23,6 +26,7 @@ class App extends Component {
 		return ( 
 			<div>
 				<SearchBar />
+				<VideoList videos={this.state.videos}/>
 			</div>
 		);
 	}
