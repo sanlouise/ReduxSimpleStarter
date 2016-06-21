@@ -1,3 +1,4 @@
+//Lodash throttles the search outcomes with 300ms
 import _ from 'lodash';
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
@@ -7,7 +8,7 @@ import SearchBar from './components/search_bar';
 import VideoList from './components/video_list'
 import VideoDetail from './components/video_detail'
 
-const API_KEY = 'AIzaSyCzPG9rlPb_UdgU0BHK6H5S-lqS3mdtQas';
+const API_KEY = 'API_KEY';
 
 class App extends Component {
 
